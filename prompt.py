@@ -16,9 +16,3 @@ def generate_prompt(prompt: str, location: str, time_year: str, size_farm: str |
     return_value += (
         f"\nE com base nisso sua primeira instrução é :'{prompt}'")
     return return_value
-
-
-print(generate_prompt("vender 10kg de tomate por 5 reais", "são paulo",
-      "verão", "pequena", "enxada", "10 reais", "tomate maduro"))
-generate_prompt("vender 10kg de tomate por 5 reais",
-                "são paulo", "verão", extra_info="Sou pobre")
