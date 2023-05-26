@@ -4,7 +4,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-@app.route('/prompt', methods=['GET'])
+@app.route('/', methods=['GET'])
 def prompt():
     prompt = request.args.get('prompt')
     location = request.args.get('location')
