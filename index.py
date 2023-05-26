@@ -1,5 +1,5 @@
-from flask import Flask, request
 from prompt import generate_prompt
+from flask import Flask, request
 
 app = Flask(__name__)
 
