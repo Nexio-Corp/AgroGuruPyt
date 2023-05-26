@@ -18,7 +18,3 @@ def prompt():
     return_value = generate_prompt(
         prompt, location, time_year, size_farm, available_tools, willing_pay, extra_info)
     return return_value
-
-
-if __name__ == "__main__":
-    app.run()
