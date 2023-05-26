@@ -29,6 +29,7 @@ def input_valid_year() -> str:
 def input_valid_name() -> str:
     name = input("Digite seu nome: ")
     while not name.isalpha() or len(name) < 3:
+        # Verifica se não tem números ou caracteres especiais e se tem mais de 3 caracteres
         name = input("Digite um nome valido: ")
     return name
 
