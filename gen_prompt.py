@@ -49,7 +49,6 @@ def create_account():
     password = input_valid_password()
     year_birth = input_valid_year()
     if int(year_birth) > 2005:
-        print("Você não tem idade para criar uma conta")
         return
     return [name, password, year_birth]
 
