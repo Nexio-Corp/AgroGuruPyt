@@ -56,10 +56,16 @@ def create_account():
 def create_prompt():
     print("Vamos criar o seu prompt!")
     prompt = input("Primeiro digite o que você quer fazer: ")
+    while prompt == "":
+        prompt = input("Digite uma ação valida: ")
     location = input(
         "Agora digite onde você está localizado (quanto mais preciso melhor): ")
+    while location == "":
+        location = input("Digite um local valido: ")
     time_year = input(
         "Agora digite a época do ano que você irá realizar isso: ")
+    while time_year == "":
+        time_year = input("Digite uma época valida: ")
     print("Agora vamos adicionar algumas informações opcionais (caso não queira deixe em branco)")
     size_farm = input("Digite o tamanho da sua fazenda: ") or None
     available_tools = input(
