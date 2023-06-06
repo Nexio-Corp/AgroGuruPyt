@@ -1,9 +1,12 @@
 from flask import Flask, request
-
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/', methods=['GET'])
+@cross_origin()
 def prompt():
     prompt = request.args.get('prompt')
     location = request.args.get('location')
@@ -30,5 +33,5 @@ def prompt():
         return_value += "\n" + extra
     return_value += (
         f"\nE com base nisso sua primeira instrução é :'{prompt}'")
-    
+
     return return_value
