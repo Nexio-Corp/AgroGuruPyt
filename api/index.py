@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 cors = CORS(app)
@@ -16,7 +16,7 @@ def prompt():
     willing_pay = request.args.get('willing_pay')
     extra_info = request.args.get('extra_info')
     if not prompt or not location or not time_year:
-        return "Falta informações necessárias", 400
+        return jsonify({'content': "Falta informações necessárias"}), 400
     extras = []
     if size_farm:
         extras.append(f"tamanho da fazenda: {size_farm}")
@@ -33,5 +33,4 @@ def prompt():
         return_value += "\n" + extra
     return_value += (
         f"\nE com base nisso sua primeira instrução é :'{prompt}'")
-
-    return return_value
+    return jsonify({"content": return_value})
