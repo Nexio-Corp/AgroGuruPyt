@@ -16,7 +16,7 @@ def prompt():
     willing_pay = request.args.get('willing_pay')
     extra_info = request.args.get('extra_info')
     if not prompt or not location or not time_year:
-        return jsonify({'content': "Falta informações necessárias"}), 400
+        return jsonify({'content': "Falta informações necessárias2"}), 400
     extras = []
     if size_farm:
         extras.append(f"tamanho da fazenda: {size_farm}")
